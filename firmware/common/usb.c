@@ -607,7 +607,7 @@ static void usb_check_for_transfer_events() {
 	}
 }
 
-void usb0_isr() {
+void __attribute__((weak)) usb0_isr() {
 	const uint32_t status = usb_get_status();
 	
 	if( status == 0 ) {
